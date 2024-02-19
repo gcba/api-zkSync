@@ -1,0 +1,34 @@
+{
+    "private": true,
+    "name": "extrimian-sidetree",
+    "version": "1.0.0",
+    "workspaces": [
+      "packages/common",
+      "packages/cas",
+      "packages/db",
+      "packages/ledger",
+      "packages/cas-ipfs",
+      "packages/core",
+      "packages/did-method",
+      "packages/ledger-ethereum",
+      "packages/ledger-rsk",
+      "packages/ledger-zksync",
+      "packages/did-method-modena",
+      "packages/did-method-modena-api"
+    ],
+  "scripts": {
+    "build": "yarn workspaces run build",
+    "clean": "find . \\( -name 'node_modules' -o -name 'dist' -o -name 'lib' \\) -type d -prune -exec rm -rf '{}' +",
+    "postinstall": "yarn workspaces run build",
+    "lint": "npx lerna run lint --stream",
+    "lint:fix": "npx lerna run lint:fix --stream",
+    "pretest": "docker-compose -f ./docker-compose.yml up --detach --remove-orphans",
+    "test": "npx lerna run test --stream --concurrency 1",
+    "test:only": "npm t -- --scope",
+    "install:clean": " npx lerna clean -y && rm -rf node_modules && npm i",
+    "publish:stable:patch": "npx lerna publish patch --force-publish --stream",
+    "publish:stable:minor": "npx lerna publish minor --stream",
+    "publish:stable:major": "npx lerna publish major --stream",
+    "publish:unstable": "npx lerna publish prerelease --preid unstable --yes --stream"
+  }
+}

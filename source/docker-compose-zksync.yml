@@ -1,0 +1,30 @@
+version: "3.7"
+services:
+    modena:
+        container_name: modena-zksync
+        image: modena-val:latest
+        extra_hosts:
+            - host.docker.internal:host-gateway
+        ports: 
+            - 6900:3000 #MODENA API port
+        environment:
+            - DID_METHOD_NAME=quarkid:zksync
+            - CONTENT_ADDRESSABLE_STORE_SERVICE_URI=http://20.121.1.184:5001/
+            - DATABASE_NAME=modena-zksync-master
+            - RPC_URL=https://mainnet.era.zksync.io
+            - MONGO_DB_CONNECTION_STRING=mongodb://host.docker.internal:27017
+            - MAX_CONCURRENT_DOWNLOADS=20
+            - OBSERVING_INTERVAL_IN_SECONDS=5
+            - BATCHING_INTERVAL_IN_SECONDS=10
+            - STARTING_BLOCKCHAIN_TIME=2652485
+            - BLOCKCHAIN_VERSION=latest
+            - MODENA_ANCHOR_CONTRACT=xxxxxxxxx
+            - WALLET_PRIVATE_KEY=xxxxxxxxx
+            - LEDGER_TYPE=zksync
+    mongo:
+      image: mongo:5.0.15
+      restart: always
+      expose:
+        - 27017
+      ports:
+        - 27017:27017
