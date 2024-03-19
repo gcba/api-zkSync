@@ -46,6 +46,7 @@ N/A
 - CONTENT_ADDRESSABLE_STORE_SERVICE_URI: URI para el CAS, en este caso un IPFS.
 - DATABASE_NAME: El nombre de la base de datos que se usar en MongoDB
 - MONGO_DB_CONNECTION_STRING: String para conectarse a la base de datos de MongoDB, es el mismo que se utiliza en compass.
+- Es importante tener en cuenta que el puerto 4001 debe estar abierto para sincronizar con IPFS. Si no se abre este puerto, el nodo no será capaz de resolver identidades que se crearon en otro nodo.
 
 ### Configuración de Ledger
 
