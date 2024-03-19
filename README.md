@@ -11,7 +11,11 @@ La aplicación cuenta con las siguientes tecnologías:
 * Typescript - 4.*
 * Yarn - 1.22.19
 
-## Diagrama
+## Arquitectura
+[Diagrama](https://docs.quarkid.org/Arquitectura/arquitectura)
+
+## Documentación
+[Link](https://docs.quarkid.org/Arquitectura/componentes)
 
 ## Licencia
 
@@ -35,11 +39,7 @@ limitaciones bajo la Licencia.
 
 ### Variables de entorno de la aplicación
 
-- DID_METHOD_NAME: Define el nombre base para su método DID
-- OBSERVING_INTERVAL_IN_SECONDS: Con qué frecuencia irá a buscar cambios a la red.
-- BATCHING_INTERVAL_IN_SECONDS: Con qué frecuencia cargará las operaciones DID procesadas en la red y escribirá un nuevo archivo de índice Core (Esto tiene un impacto en el uso de gas)
-- PORT: El puerto donde escuchará la aplicación. Si no está definido, el valor predeterminado es 3000.
-- MAX_CONCURRENT_DOWNLOADS: Cantidad máxima de descargas al mismo tiempo.
+N/A
 
 ### Base de datos y CAS
 
@@ -58,6 +58,22 @@ limitaciones bajo la Licencia.
 - ACCOUNT_ADDRESS (solo requerido en starknet): Dirección para el contrato de la cuenta.
 - SECONDARY_WALLET_PRIVATE_KEY: (opcional en zksync) Clave privada de la cuenta con la que va a realizar la lectura en 'zksync'
 - SECONDARY_RPC_URL:(opcional en zksync) RPC para la wallet que lee de la blockchain en 'zksync'
+
+### Requerimientos de red
+
+La aplicación debe tener conectividad a internet para poder sincronizar con blockchain.
+
+### Ruta de acceso
+
+N/A
+
+### Healthcheck
+
+Para comprobar la salud del servicio basta con navegar la url base con una / al final, retornara un Status 200, con la info correspondiente.
+
+
+
+
 
 ## Instalación
 
@@ -91,7 +107,7 @@ sudo chmod +x /usr/local/bin/docker-compose
 s2i build ../secictd/identidad-soberana/api-zksynk.git -r {TAG A GENERAR} --context-dir source registry.access.redhat.com/ubi8/nodejs-18:latest api-zksynk-s2i |& tee /tmp/api-zksynk-s2i-build.log
 ```
 
-4. podman sockets
+4. Podman sockets
 
 ````
 sudo systemctl start podman.socket
@@ -100,14 +116,14 @@ sudo systemctl start podman.socket
 sudo systemctl status podman.socket
 ````
 
-5. docker-compose up
+5. Docker-compose up
 ya que la app no tiene permiso para crear la bbdd en mongo,
 crear base de datos en mongo de produccion ( y agregar ruta al mongo en el docker compose), "modena-zksync-testnet-v1"
 
 ````
 /usr/local/bin/docker-compose -f docker-compose-zk-prod.yml up
 ````
-6. servicio de rebooteo
+6. Servicio de rebooteo
 ````
 podman generate systemd --files --name source_modenav4_1
 ````
@@ -120,19 +136,3 @@ sudo systemctl daemon-reload
 ````
 sudo loginctl enable-linger
 ..
-
-## Requerimientos de red
-
-La aplicación debe tener conectividad a internet para poder sincronizar con blockchain.
-
-## Ruta de acceso
-
-- [Dev](http://10.9.10.43:8000/)
-- [QA](http://10.9.10.43:8000/)
-- [HML](http://10.9.10.43:8000/)
-- [PROD](https://api-zksync.buenosaires.gob.ar/)
-
-## Healthcheck
-
-Para comprobar la salud del servicio basta con navegar la url base con una / al final, retornara un Status 200, con la info correspondiente.
-
