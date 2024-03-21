@@ -17,6 +17,26 @@ La aplicación cuenta con las siguientes tecnologías:
 ## Documentación
 [Link](https://docs.quarkid.org/Arquitectura/componentes)
 
+## Modificación de red Blockchain
+
+En caso de querer utilizar este componente anclado en alguna otra red blockchain, se deberá tener en cuenta las siguientes acalaraciones: 
+
+## Ledgers Soportados
+
+Esta implementación admite el anclaje de una red Sidetree para una serie de BlockChains de Nivel 2.
+Sopórta cualquier blockchain similar a Ethereum, se realizaron pruebas con RSK y Polygon. Se requiere que la red sea compatible con los módulos Web3 y HDWalletProvider node.js.
+Para Starknet, se realizaron pruebas usando el módulo StarkNet.js y el paquete ledger-starknet y se pudo crear una red Sidetree.
+
+- RPC_URL: URL para que el nodo se conecte a la blockchain.
+- MODENA_ANCHOR_CONTRACT: Dirección del contracto de anclaje de Sidetree en la Ledger.
+- STARTING_BLOCKCHAIN_TIME: Número de bloque por el cual el core va a empezar a sincronizarse con la red.
+- BLOCKCHAIN_VERSION: Utilice 'latest'
+- WALLET_PRIVATE_KEY: Clave privada de la cuenta con la que se va a pagar las transacciones de escritura.
+- LEDGER_TYPE: 'eth' para tipo Ethereum, 'starknet' para StarkNet, 'rsk' para polling en chunks, 'zksync' para utilizar wallet ethers
+- ACCOUNT_ADDRESS (solo requerido en starknet): Dirección para el contrato de la cuenta.
+- SECONDARY_WALLET_PRIVATE_KEY: (opcional en zksync) Clave privada de la cuenta con la que va a realizar la lectura en 'zksync'
+- SECONDARY_RPC_URL:(opcional en zksync) RPC para la wallet que lee de la blockchain en 'zksync'
+
 ## Licencia
 
 Copyright [2023] [Gobierno de la Ciudad de Buenos Aires]
@@ -71,9 +91,6 @@ N/A
 ### Healthcheck
 
 Para comprobar la salud del servicio basta con navegar la url base con una / al final, retornara un Status 200, con la info correspondiente.
-
-
-
 
 
 ## Instalación
