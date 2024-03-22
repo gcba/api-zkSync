@@ -17,6 +17,30 @@ La aplicación cuenta con las siguientes tecnologías:
 ## Documentación
 [Link](https://docs.quarkid.org/Arquitectura/componentes)
 
+## Configuraración de entorno Local
+
+Se requiere tener instalados previeamente:
+```bash
+npm install -g @nestjs/cli
+```
+
+Clonar el repositorio
+
+- Abrir el proyecto con el editor seleccionado
+- Abrir una terminal y ejecutar:
+
+```bash
+yarn
+yarn build
+cd packages/did-method-modena-api
+nest start
+```
+
+
+
+
+
+
 ## Modificación de red Blockchain
 
 En caso de querer utilizar este componente anclado en alguna otra red blockchain, se deberá tener en cuenta las siguientes acalaraciones: 
