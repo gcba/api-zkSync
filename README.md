@@ -61,22 +61,6 @@ Para Starknet, se realizaron pruebas usando el módulo StarkNet.js y el paquete 
 - SECONDARY_WALLET_PRIVATE_KEY: (opcional en zksync) Clave privada de la cuenta con la que va a realizar la lectura en 'zksync'
 - SECONDARY_RPC_URL:(opcional en zksync) RPC para la wallet que lee de la blockchain en 'zksync'
 
-## Licencia
-
-Copyright [2023] [Gobierno de la Ciudad de Buenos Aires]
-
-Licenciado bajo la Licencia Apache, Versión 2.0 (la "Licencia");
-no puede utilizar este archivo excepto de conformidad con la Licencia.
-Puede obtener una copia de la Licencia en
-
-[LICENSE](http://www.apache.org/licenses/LICENSE-2.0)
-
-A menos que lo exija la ley aplicable o se acuerde por escrito, el software
-distribuido bajo la Licencia se distribuye "TAL CUAL",
-SIN GARANTÍAS NI CONDICIONES DE NINGÚN TIPO, ya sean expresas o implícitas.
-Consulte la Licencia para conocer el idioma específico que rige los permisos y
-limitaciones bajo la Licencia.
-
 ## Variables de Entorno
 
 ### Generales
@@ -178,3 +162,17 @@ sudo systemctl daemon-reload
 ````
 sudo loginctl enable-linger
 ..
+````
+
+## Licencia
+Derechos de autor © 2023 Gobierno de la Ciudad de Buenos Aires
+
+Licenciado bajo la Licencia Apache, Versión 2.0 (la "Licencia");
+usted no puede utilizar este archivo excepto en cumplimiento con la Licencia.
+Puede obtener una copia de la Licencia en
+http://www.apache.org/licenses/LICENSE-2.0.
+A menos que lo requiera la ley aplicable o se acuerde por escrito, el software
+distribuido bajo la Licencia se distribuye "TAL CUAL",
+SIN GARANTÍAS O CONDICIONES DE NINGÚN TIPO, ya sean expresas o implícitas.
+Consulte la Licencia para el idioma específico que rige los permisos y
+limitaciones bajo la Licencia.
