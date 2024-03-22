@@ -21,10 +21,10 @@ La aplicación cuenta con las siguientes tecnologías:
 
 En caso de querer utilizar este componente anclado en alguna otra red blockchain, se deberá tener en cuenta las siguientes acalaraciones: 
 
-## Ledgers Soportados
+## Ledgers soportados
 
 Esta implementación admite el anclaje de una red Sidetree para una serie de BlockChains de Nivel 2.
-Sopórta cualquier blockchain similar a Ethereum, se realizaron pruebas con RSK y Polygon. Se requiere que la red sea compatible con los módulos Web3 y HDWalletProvider node.js.
+Soporta cualquier blockchain similar a Ethereum, se realizaron pruebas con RSK y Polygon. Se requiere que la red sea compatible con los módulos Web3 y HDWalletProvider node.js.
 Para Starknet, se realizaron pruebas usando el módulo StarkNet.js y el paquete ledger-starknet y se pudo crear una red Sidetree.
 
 - RPC_URL: URL para que el nodo se conecte a la blockchain.
