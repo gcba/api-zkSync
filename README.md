@@ -17,9 +17,9 @@ La aplicación cuenta con las siguientes tecnologías:
 ## Documentación
 [Link](https://docs.quarkid.org/Arquitectura/componentes)
 
-## Configuraración de entorno Local
+## Configuraración de entorno local
 
-Se requiere tener instalados previeamente:
+Se requiere tener instalados previamente:
 ```bash
 npm install -g @nestjs/cli
 ```
