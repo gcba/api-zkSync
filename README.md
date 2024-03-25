@@ -15,7 +15,7 @@ La aplicación cuenta con las siguientes tecnologías:
 [Diagrama](https://docs.quarkid.org/Arquitectura/)
 
 ## Documentación
-[Link](https://docs.quarkid.org/Arquitectura/componentes)
+[Link](https://docs.quarkid.org/Arquitectura/componentes/)
 
 ## Configuraración de entorno local
 
