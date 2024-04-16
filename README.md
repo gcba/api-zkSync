@@ -30,22 +30,17 @@ Clonar el repositorio
 - Abrir una terminal y ejecutar:
 
 ```bash
+cd source
 yarn
-yarn build
 cd packages/did-method-modena-api
 nest start
 ```
-
-
-
-
-
 
 ## Modificación de red Blockchain
 
 En caso de querer utilizar este componente anclado en alguna otra red blockchain, se deberá tener en cuenta las siguientes acalaraciones: 
 
-## Ledgers soportados
+Ledgers soportados:
 
 Esta implementación admite el anclaje de una red Sidetree para una serie de BlockChains de Nivel 2.
 Soporta cualquier blockchain similar a Ethereum, se realizaron pruebas con RSK y Polygon. Se requiere que la red sea compatible con los módulos Web3 y HDWalletProvider node.js.
