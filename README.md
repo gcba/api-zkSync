@@ -160,7 +160,7 @@ sudo loginctl enable-linger
 ## Pasos para instalar el componente en un servidor
 
 1. Contar con Linux vacío. 
-2. Instalar el componente y sus imágenes, se encuentran [Dockerhub](https://hub.docker.com/r/quarkid/api-zksync). 
+2. Instalar el componente y sus imágenes, se encuentran en [Docker](https://hub.docker.com/r/quarkid/api-zksync).
 
 Para instalar un componente desde Docker Hub en tu servidor, sigue estos pasos:
 
@@ -178,7 +178,7 @@ Si aún no tienes Docker instalado en tu servidor, sigue las instrucciones para 
 Debes especificar el nombre completo de la imagen, que incluye el nombre del usuario o la organización en Docker Hub y el nombre de la imagen. Ejecuta el contenedor: 
 
 ```bash
-docker pull docker pull quarkid/api-proxy
+docker pull quarkid/api-zksync
 ```
 
 Una vez que la imagen del componente se haya descargado en tu servidor, puedes ejecutar un contenedor utilizando el comando
