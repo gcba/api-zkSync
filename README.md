@@ -2,12 +2,12 @@
 ## [Tecnologías](https://github.com/gcba/api-zkSync/tree/master?tab=readme-ov-file#tecnolog%C3%ADas)
 ## [Arquitectura](https://docs.quarkid.org/Arquitectura/) y [Documentación](https://docs.quarkid.org/Arquitectura/componentes/)
 ## Configuraciones: 
-### [Entorno local](https://github.com/gcba/api-zkSync/tree/master?tab=readme-ov-file#configuraraci%C3%B3n-de-entorno-local)
-### [Modificación de Red Blockchain](https://github.com/gcba/api-zkSync/tree/master?tab=readme-ov-file#modificaci%C3%B3n-de-red-blockchain)
-### [Variables de entorno](https://github.com/gcba/api-zkSync/tree/master?tab=readme-ov-file#modificaci%C3%B3n-de-red-blockchain)
-### [Instalación](https://github.com/gcba/api-zkSync/tree/master?tab=readme-ov-file#modificaci%C3%B3n-de-red-blockchain)
-### [Pasos para instalar el componente en un servidor](https://github.com/gcba/api-zkSync/tree/master?tab=readme-ov-file#pasos-para-instalar-el-componente-en-un-servidor)
-### [Licencia](https://github.com/gcba/api-zkSync/tree/master?tab=readme-ov-file#licencia)
+### 1. [Entorno local](https://github.com/gcba/api-zkSync/tree/master?tab=readme-ov-file#configuraraci%C3%B3n-de-entorno-local)
+### 2. [Modificación de Red Blockchain](https://github.com/gcba/api-zkSync/tree/master?tab=readme-ov-file#modificaci%C3%B3n-de-red-blockchain)
+### 3. [Variables de entorno](https://github.com/gcba/api-zkSync/tree/master?tab=readme-ov-file#modificaci%C3%B3n-de-red-blockchain)
+### 4. [Instalación](https://github.com/gcba/api-zkSync/tree/master?tab=readme-ov-file#modificaci%C3%B3n-de-red-blockchain)
+### 5. [Pasos para instalar el componente en un servidor](https://github.com/gcba/api-zkSync/tree/master?tab=readme-ov-file#pasos-para-instalar-el-componente-en-un-servidor)
+## [Licencia](https://github.com/gcba/api-zkSync/tree/master?tab=readme-ov-file#licencia)
 
 
 -------------------------------------------------------------------------------------------------------
