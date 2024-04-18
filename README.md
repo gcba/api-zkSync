@@ -1,3 +1,17 @@
+## [Descripción](https://github.com/gcba/api-zkSync/edit/master/README.md#descripci%C3%B3n)
+## [Tecnologías](https://github.com/gcba/api-zkSync/tree/master?tab=readme-ov-file#tecnolog%C3%ADas)
+## [Arquitectura](https://github.com/gcba/api-zkSync/tree/master?tab=readme-ov-file#arquitectura) y [Documentación](https://docs.quarkid.org/Arquitectura/componentes/)
+## Configuraciones: 
+### - [Entorno local](https://github.com/gcba/api-zkSync/tree/master?tab=readme-ov-file#configuraraci%C3%B3n-de-entorno-local)
+### - [Modificación de Red Blockchain](https://github.com/gcba/api-zkSync/tree/master?tab=readme-ov-file#modificaci%C3%B3n-de-red-blockchain)
+### - [Variables de entorno](https://github.com/gcba/api-zkSync/tree/master?tab=readme-ov-file#modificaci%C3%B3n-de-red-blockchain)
+### - [Instalación](https://github.com/gcba/api-zkSync/tree/master?tab=readme-ov-file#modificaci%C3%B3n-de-red-blockchain)
+### - [Pasos para instalar el componente en un servidor](https://github.com/gcba/api-zkSync/tree/master?tab=readme-ov-file#pasos-para-instalar-el-componente-en-un-servidor)
+### - [Licencia](https://github.com/gcba/api-zkSync/tree/master?tab=readme-ov-file#licencia)
+
+
+-------------------------------------------------------------------------------------------------------
+
 ## Descripción
 
 ApiZksync es un componente cuya funcionalidad principal es la creación y gestión de identificadores descentralizados (DID). Una de las características clave de esta implementación de SideTree es la capacidad de optimizar los costos de transacción al minimizar la cantidad de interacciones directas con la cadena de bloques al igual que permitir al usuario modificaciones sobre sus DID.
@@ -61,8 +75,23 @@ Para Starknet, se realizaron pruebas usando el módulo StarkNet.js y el paquete 
 ### Generales
 
 ### Variables de entorno de la aplicación
+Se deben configurar las variables de entorno en [Source](/source/packages/did-method-modena-api/config/modena-node-config.json)
 
-N/A
+- DID_METHOD_NAME: quarkid 
+- CONTENT_ADDRESSABLE_STORE_SERVICE_URI: IP:PUERTO
+- DATABASE_NAME: -zksync-mainnet-v1 
+- RPC_URL: https://mainnet.era.zksync.io
+- MONGO_DB_CONNECTION_STRING: mongodb://10.1.0.2:27017
+- MAX_CONCURRENT_DOWNLOADS: 20
+- OBSERVING_INTERVAL_IN_SECONDS: 30
+- BATCHING_INTERVAL_IN_SECONDS: 21600
+- STARTING_BLOCKCHAIN_TIME: 2652485
+- BLOCKCHAIN_VERSION: latest
+- MODENA_ANCHOR_CONTRACT 0xe0055B74422Bec15cB1625792C4aA0beDcC61AA7
+- WALLET_PRIVATE_KEY: Clave Privada de un address con saldo en la red Zksync
+- ACCOUNT_ADDRESS: 0x9CAA73a4865fa9dbb125b6C7B2f03b6621234
+- LEDGER_TYPE: zksync | rsk | eth Red blockchain a utilizar
+
 
 ### Base de datos y CAS
 
@@ -181,7 +210,7 @@ Debes especificar el nombre completo de la imagen, que incluye el nombre del usu
 docker pull quarkid/api-zksync
 ```
 
-Una vez que la imagen del componente se haya descargado en tu servidor, puedes ejecutar un contenedor utilizando el comando
+Una vez que la imagen del componente se haya descargado en tu servidor, recuerda, antes, configurar las variables de entorno en [Source](/source/packages/did-method-modena-api/config/modena-node-config.json). Luego, puedes ejecutar el contenedor utiliznando el comando: 
 
 ```bash
 'docker run'.
