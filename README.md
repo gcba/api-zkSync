@@ -7,6 +7,7 @@
 ### 3. [Variables de entorno](https://github.com/gcba/api-zkSync/tree/master?tab=readme-ov-file#modificaci%C3%B3n-de-red-blockchain)
 ### 4. [Instalación](https://github.com/gcba/api-zkSync/tree/master?tab=readme-ov-file#modificaci%C3%B3n-de-red-blockchain)
 ### 5. [Pasos para instalar el componente en un servidor](https://github.com/gcba/api-zkSync/tree/master?tab=readme-ov-file#pasos-para-instalar-el-componente-en-un-servidor)
+### 6. [Pasos para iniciar un nodo de Identidad Quarkid](https://github.com/gcba/Nodo-QuickStar/tree/master)
 ## [Licencia](https://github.com/gcba/api-zkSync/tree/master?tab=readme-ov-file#licencia)
 
 
