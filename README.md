@@ -188,44 +188,86 @@ sudo loginctl enable-linger
 ````
 ## Pasos para instalar el componente en un servidor
 
-1. Contar con Linux vacío. 
-2. Instalar el componente y sus imágenes, se encuentran en [Docker](https://hub.docker.com/r/quarkid/api-zksync).
+Prerequisitos:
+En un servidor Linux vacío, usted debe instalar Docker.
 
-Para instalar un componente desde Docker Hub en tu servidor, sigue estos pasos:
+Para instalar Docker en Ubuntu, sigue estos pasos:
 
-1. Conéctate al servidor.
+1. Actualiza el índice de paquetes:
+bash
+sudo apt update
 
-2. Instala Docker en el servidor:
-Si aún no tienes Docker instalado en tu servidor, sigue las instrucciones para instalar Docker en tu sistema operativo. Puedes encontrar guías detalladas en la documentación oficial de Docker.
+2. Instala los paquetes necesarios para permitir que apt utilice un repositorio sobre HTTPS:
+````
+sudo apt install apt-transport-https ca-certificates curl software-properties-common
+````
+3. Descarga la clave GPG oficial de Docker:
+````
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+````
+4. Añade el repositorio de Docker a las fuentes de apt:
+````
+Copy code
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+````
 
-3. Descarga la imagen del componente desde Docker Hub utilizando el comando
-   
-```bash
-'docker pull'
-```
+5. Actualiza el índice de paquetes nuevamente para que apt pueda utilizar el nuevo repositorio agregado:
+````
+sudo apt update
+````
+6. Asegúrate de que estás a punto de instalar desde el repositorio de Docker en lugar del repositorio predeterminado de Ubuntu:
+````
+apt-cache policy docker-ce
+````
 
-Debes especificar el nombre completo de la imagen, que incluye el nombre del usuario o la organización en Docker Hub y el nombre de la imagen. Ejecuta el contenedor: 
+8. Finalmente, instala Docker:
+````
+sudo apt install docker-ce
+````
 
-```bash
-docker pull quarkid/api-zksync
-```
+Docker ahora debería estar instalado, el servicio se iniciará automáticamente después de la instalación. Para verificar que Docker se haya instalado correctamente, puedes ejecutar el siguiente comando:
+````
+sudo systemctl status docker
+````
 
-Una vez que la imagen del componente se haya descargado en tu servidor, recuerda, antes, configurar las variables de entorno en [Source](/source/packages/did-method-modena-api/config/modena-node-config.json). Luego, puedes ejecutar el contenedor utiliznando el comando: 
+### Ahora tienes Docker instalado en tu máquina Ubuntu. Puedes comenzar a utilizar Docker para crear, ejecutar y administrar contenedores.
 
-```bash
-'docker run'.
-```
+## Para la instalación de los componentes de QuarkID, los pasos son: 
+ 1)  Descargar las Imágenes Docker, e instalarlas en el server, con los siguientes comandos: 
+````
+ docker pull quarkid/api-proxy
+ docker pull quarkid/api-zksync
+ docker pull ipfs/kubo:latest
+ docker pull mongo:latest
+ ````
 
-6. Verifica que el contenedor esté en ejecución:
-Utiliza el comando docker ps para verificar que el contenedor esté en ejecución en tu servidor.
+ 2) Verificar que las imágenes se hayan descargado
+ ````
+ docker image ls
 
-
-
-
-
-
-
-
+ REPOSITORY TAG IMAGE ID SIZE
+ quarkid/api-proxy latest cb8941a6fbe4 16 hours ago 1.26GB
+ quarkid/api-zksync latest 13e12acfd1c0 5 months ago 3.56GB
+ ipfs/kubo latest 71f8fff78bb2 3 days ago 94.6MB
+ mongo
+````
+3) Crear el archivo docker-compose.yml con la siguiente configuracion. Deberá crear en testnet una cuenta y configurar en un address 
+ y se le transfiere saldo para poder ejecutar las transacciones:
+````
+ ACCOUNT_ADDRESS=****
+ WALLET_PRIVATE_KEY=****
+ ````
+ Deberá configurar esos datos dentro del archivo.
+ 
+ Para crear el archivo:
+````
+ nano docker-compose.yml
+````
+Paso 4:
+ Luego ejecutar 
+````
+docker compose up
+````
 ## Licencia
 Derechos de autor © 2023 Gobierno de la Ciudad de Buenos Aires
 
